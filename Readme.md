@@ -1,4 +1,4 @@
-# Unity and Mono Compatible HttpServer Library
+# Unity and Mono Compatible Simple HttpServer Library
 
 **Currently only supports GET method**
 
@@ -42,7 +42,7 @@ public class ServerTest : MonoBehaviour
         if (httpServer != null)
         {
             httpServer.Stop();
-            httpServer.onHttpRequestReceived -= OnHttpRequestReceived;
+            httpServer.onHttpRequestReceived = null;
         }
     }
 }

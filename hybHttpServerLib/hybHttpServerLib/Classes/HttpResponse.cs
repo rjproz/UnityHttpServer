@@ -34,7 +34,7 @@ namespace Hybriona
 
         public void Send(int statusCode,string statusMessage = "")
         {
-            byte[] header_data = System.Text.Encoding.UTF8.GetBytes(string.Format("HTTP/1.1 {0} {1}\n\r", statusCode, statusMessage));
+            byte[] header_data = System.Text.Encoding.UTF8.GetBytes(string.Format("HTTP/1.1 {0} {1}\r\n", statusCode, statusMessage));
             headerStream.Write(header_data, 0, header_data.Length);
 
 
@@ -42,11 +42,11 @@ namespace Hybriona
 
             foreach(var header in headerList)
             {
-                header_data = System.Text.Encoding.UTF8.GetBytes(string.Format("{0}: {1}\n\r",header.Key,header.Value));
+                header_data = System.Text.Encoding.UTF8.GetBytes(string.Format("{0}: {1}\r\n",header.Key,header.Value));
                 headerStream.Write(header_data, 0, header_data.Length);
             }
 
-            header_data = System.Text.Encoding.UTF8.GetBytes("\n\r");
+            header_data = System.Text.Encoding.UTF8.GetBytes("\r\n");
             headerStream.Write(header_data, 0, header_data.Length);
 
             if (headerStream.Length > 0)

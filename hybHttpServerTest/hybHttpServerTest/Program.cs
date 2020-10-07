@@ -1,5 +1,5 @@
 ﻿using System;
-using Hybriona;
+using Hybriona.Server;
 namespace hybHttpServerTest
 {
     class Program

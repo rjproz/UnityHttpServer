@@ -2,7 +2,7 @@
 using System.IO;
 using System.Net.Sockets;
 
-namespace Hybriona
+namespace Hybriona.Server
 {
     public class Client : IDisposable
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Hybriona
+namespace Hybriona.Server
 {
     public delegate void OnHttpRequestReceived(HttpRequest headers, HttpResponse httpResponse);
 }

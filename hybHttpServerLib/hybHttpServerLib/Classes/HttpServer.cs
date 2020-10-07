@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
 using System.Net;
-namespace Hybriona
+namespace Hybriona.Server
 {
     public class HttpServer
     {

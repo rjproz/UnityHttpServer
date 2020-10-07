@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-namespace Hybriona
+namespace Hybriona.Server
 {
     public class HttpRequest
     {

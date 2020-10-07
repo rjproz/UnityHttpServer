@@ -2,13 +2,13 @@
 using Hybriona.Server;
 namespace hybHttpServerTest
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             HttpServer httpServer = new HttpServer(81);
+            httpServer.onRequestReceived = OnHttpRequestReceived;
             httpServer.Start();
-            httpServer.onHttpRequestReceived += OnHttpRequestReceived;
             Console.ReadKey();
             
         }

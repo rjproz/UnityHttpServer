@@ -5,15 +5,18 @@ namespace Hybriona.Server
 {
     public class HttpServer
     {
+        public System.Action<HttpRequest, HttpResponse> onRequestReceived { get; set; }
+
+        [ObsoleteAttribute("OnHttpRequestReceived is obsolete. Use onRequestReceived instead.", true)]
         public OnHttpRequestReceived onHttpRequestReceived;
 
         private int port;
         private TcpListener server;
-
+ 
         public HttpServer(int port)
         {
             this.port = port;
-            server = new TcpListener(IPAddress.Any,this.port);
+            this.server = new TcpListener(IPAddress.Any,this.port);
         }
 
 
@@ -27,6 +30,14 @@ namespace Hybriona.Server
         public void Stop()
         {
             server.Stop();
+        }
+
+        public void EventCallback(HttpRequest headers, HttpResponse httpResponse)
+        {
+            if(onRequestReceived != null)
+            {
+                onRequestReceived(headers, httpResponse);
+            }
         }
 
 

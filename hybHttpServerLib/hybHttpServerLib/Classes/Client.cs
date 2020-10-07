@@ -28,9 +28,6 @@ namespace Hybriona.Server
             Dispose();
         }
 
-
-     
-
         public void Dispose()
         {
             try
@@ -64,10 +61,7 @@ namespace Hybriona.Server
                 headers.Parse(buffer, count);
                 if(headers.isDone)
                 {
-                    if (assocServer.onHttpRequestReceived != null)
-                    {
-                        assocServer.onHttpRequestReceived(headers,new HttpResponse(networkStream));
-                    }
+                    assocServer.EventCallback(headers, new HttpResponse(networkStream));
                 }
                 else
                 {

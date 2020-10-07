@@ -7,7 +7,7 @@ namespace hybHttpServerTest
         static void Main(string[] args)
         {
             HttpServer httpServer = new HttpServer(81);
-            httpServer.onRequestReceived = OnHttpRequestReceived;
+            httpServer.SetEventListener(OnHttpRequestReceived);
             httpServer.Start();
             Console.ReadKey();
             

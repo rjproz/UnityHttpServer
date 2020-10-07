@@ -8,7 +8,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Hybriona;
+using Hybriona.Server;
 public class ServerTest : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -52,7 +52,7 @@ public class ServerTest : MonoBehaviour
 
 ```csharp
 using System;
-using Hybriona;
+using Hybriona.Server;
 namespace hybHttpServerTest
 {
     class Program
